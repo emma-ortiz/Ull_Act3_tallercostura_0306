@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2 class="text-center mb-4">Lista de Alumnos Registrados</h2>
+
+<table class="table table-hover table-bordered align-middle bg-white shadow">
+  <thead class="table-primary text-center">
+    <tr>
+      <th>ID</th>
+      <th>Nombre</th>
+      <th>Correo</th>
+      <th>Teléfono</th>
+      <th>Dirección</th>
+      <th>Fecha de Nacimiento</th>
+      <th>Fecha de Registro</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for alumno in alumnos %}
+    <tr>
+      <td>{{ alumno.id }}</td>
+      <td>{{ alumno.nombre }} {{ alumno.apellido }}</td>
+      <td>{{ alumno.correo }}</td>
+      <td>{{ alumno.telefono }}</td>
+      <td>{{ alumno.direccion }}</td>
+      <td>{{ alumno.fecha_nacimiento }}</td>
+      <td>{{ alumno.fecha_registro }}</td>
+      <td class="text-center">
+        <a href="{% url 'actualizar_alumno' alumno.id %}" class="btn btn-warning btn-sm"><i class="bi bi-pencil"></i></a>
+        <a href="{% url 'borrar_alumno' alumno.id %}" class="btn btn-danger btn-sm"><i class="bi bi-trash"></i></a>
+      </td>
+    </tr>
+    {% empty %}
+    <tr>
+      <td colspan="8" class="text-center">No hay alumnos registrados.</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

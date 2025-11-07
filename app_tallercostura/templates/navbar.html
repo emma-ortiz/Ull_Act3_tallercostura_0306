@@ -1,0 +1,59 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow">
+  <div class="container-fluid">
+    <a class="navbar-brand fw-bold" href="{% url 'inicio_tallercostura' %}">
+      <i class="bi bi-scissors"></i> Taller de Costura
+    </a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTaller" aria-controls="navbarTaller" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarTaller">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        
+        <!-- 🔹 Inicio -->
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'inicio_tallercostura' %}">
+            <i class="bi bi-house-door"></i> Inicio
+          </a>
+        </li>
+
+        <!-- 🔹 Dropdown Alumnos -->
+       <li class="nav-item dropdown">
+  <a class="nav-link dropdown-toggle" href="#" id="menuAlumnos" role="button"
+     data-bs-toggle="dropdown" aria-expanded="false">
+     <i class="bi bi-people"></i> Alumnos
+  </a>
+  <ul class="dropdown-menu" aria-labelledby="menuAlumnos">
+    <li><a class="dropdown-item" href="{% url 'agregar_alumno' %}">Agregar alumno</a></li>
+    <li><a class="dropdown-item" href="{% url 'ver_alumno' %}">Ver alumnos</a></li>
+  </ul>
+</li>
+
+
+
+        <!-- 🔹 Dropdown Clases -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="menuClases" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="bi bi-journal-text"></i> Clases
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="menuClases">
+            <li><a class="dropdown-item" href="#"><i class="bi bi-list-ul"></i> Ver clases</a></li>
+            <li><a class="dropdown-item" href="#"><i class="bi bi-plus-square"></i> Agregar clase</a></li>
+          </ul>
+        </li>
+
+        <!-- 🔹 Dropdown Inscripciones -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="menuInscripciones" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="bi bi-pencil-square"></i> Inscripciones
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="menuInscripciones">
+            <li><a class="dropdown-item" href="#"><i class="bi bi-list-check"></i> Ver inscripciones</a></li>
+            <li><a class="dropdown-item" href="#"><i class="bi bi-person-check"></i> Nueva inscripción</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

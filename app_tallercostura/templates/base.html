@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    {% include 'header.html' %}
+</head>
+<body class="d-flex flex-column min-vh-100">
+    {% include 'navbar.html' %}
+    
+    <main class="container my-4 flex-grow-1">
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    {% include 'footer.html' %}
+</body>
+</html>

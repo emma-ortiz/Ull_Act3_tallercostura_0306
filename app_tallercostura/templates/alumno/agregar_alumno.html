@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2 class="text-center mb-4">Agregar Alumno</h2>
+
+<form method="POST" class="shadow p-4 rounded bg-white">
+  {% csrf_token %}
+  <div class="row mb-3">
+    <div class="col-md-6">
+      <label class="form-label">Nombre:</label>
+      <input type="text" name="nombre" class="form-control" required>
+    </div>
+    <div class="col-md-6">
+      <label class="form-label">Apellido:</label>
+      <input type="text" name="apellido" class="form-control" required>
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label">Correo:</label>
+    <input type="email" name="correo" class="form-control" required>
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label">Teléfono:</label>
+    <input type="text" name="telefono" class="form-control" maxlength="15" required>
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label">Dirección:</label>
+    <input type="text" name="direccion" class="form-control" maxlength="200" required>
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label">Fecha de nacimiento:</label>
+    <input type="date" name="fecha_nacimiento" class="form-control" required>
+  </div>
+
+  <button type="submit" class="btn btn-success w-100">Guardar Alumno</button>
+</form>
+{% endblock %}

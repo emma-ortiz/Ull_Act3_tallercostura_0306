@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container mt-4">
+    <h2 class="mb-4">Actualizar Alumno</h2>
+    <form action="{% url 'realizar_actualizacion_alumno' alumno.id %}" method="POST">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label class="form-label">Nombre</label>
+            <input type="text" name="nombre" value="{{ alumno.nombre }}" class="form-control" required>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Apellido</label>
+            <input type="text" name="apellido" value="{{ alumno.apellido }}" class="form-control" required>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Correo</label>
+            <input type="email" name="correo" value="{{ alumno.correo }}" class="form-control" required>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Teléfono</label>
+            <input type="text" name="telefono" value="{{ alumno.telefono }}" class="form-control" required>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Dirección</label>
+            <input type="text" name="direccion" value="{{ alumno.direccion }}" class="form-control">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Fecha de nacimiento</label>
+            <input type="date" name="fecha_nacimiento" value="{{ alumno.fecha_nacimiento|date:'Y-m-d' }}" class="form-control" required>
+        </div>
+        <button type="submit" class="btn btn-success">Guardar cambios</button>
+        <a href="{% url 'ver_alumno' %}" class="btn btn-secondary">Cancelar</a>
+    </form>
+</div>
+{% endblock %}
